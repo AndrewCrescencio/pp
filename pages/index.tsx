@@ -3,7 +3,7 @@ import { ReactElement, useState } from "react";
 import Layout from "../components/Layout";
 import Tabs from "../components/Tabs";
 
-import * as S from "./styles/styles";
+import * as S from "../styles/styles";
 
 const Home = () => {
   const [initialTab, setInitialTab] = useState<boolean>(true);
