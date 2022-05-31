@@ -9,8 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.1.0",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@fontsource/poppins": "^4.5.8",
+    "@types/react-autocomplete": "^1.8.6",
+    "axios": "^0.27.2",
+    "framer-motion": "^6",
+    "lodash": "^4.17.21",
     "next": "12.1.6",
     "react": "18.1.0",
+    "react-autocomplete": "^1.8.1",
     "react-dom": "18.1.0"
   },
   "devDependencies": {
