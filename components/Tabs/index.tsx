@@ -2,7 +2,7 @@ import Autocomplete from "react-autocomplete";
 import { useRouter } from "next/router";
 import axios from "axios";
 import {
-  Tabs,
+  Tabs as Ctabs,
   TabList,
   TabPanels,
   Tab,
@@ -42,7 +42,7 @@ type Tagents = {
   role: string;
   status: Tstatus;
 };
-const Home = (): JSX.Element => {
+const Tabs = (): JSX.Element => {
   const [agents, setagents] = useState<Tagents[]>([]);
 
   const [tabIndex, setTabIndex] = useState(0);
@@ -85,7 +85,7 @@ const Home = (): JSX.Element => {
         borderRadius={8}
         backgroundColor="#fff"
       >
-        <Tabs p={0} index={tabIndex} onChange={handleTabsChange}>
+        <Ctabs p={0} index={tabIndex} onChange={handleTabsChange}>
           {windowWidth >= 1280 ? (
             <TabList p={0} borderBottomColor="#EAEFED">
               <Tab
@@ -150,7 +150,7 @@ const Home = (): JSX.Element => {
               <PositionsList />
             </TabPanel>
           </TabPanels>
-        </Tabs>
+        </Ctabs>
       </Box>
 
       <Drawer
@@ -205,4 +205,4 @@ const Home = (): JSX.Element => {
   );
 };
 
-export default Home;
+export default Tabs;
