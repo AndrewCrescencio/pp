@@ -132,7 +132,6 @@ const CollaboratorsList = ({ agents }: CollaboratorsListProps) => {
               <S.LoadMoreButton
                 onClick={() => {
                   setPageSize(pageSize + 10);
-                  console.log(pageSize, agents.length);
                 }}
                 disabled={pageSize >= agents.length ? true : false}
               >

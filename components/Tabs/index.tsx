@@ -32,21 +32,14 @@ import * as S from "./styles";
 
 import moreVertical from "../../public/images/more-vertical.svg";
 
-export type Tstatus = "active" | "inactive";
-type Tagents = {
-  agent_id: number;
-  name: string;
-  image: string;
-  department: string;
-  branch: string;
-  role: string;
-  status: Tstatus;
+import type { Tagent, Trole } from "../../pages/index";
+
+type TabsProps = {
+  agents: Tagent[];
+  roles: Trole[];
 };
-const Tabs = (): JSX.Element => {
-  const [agents, setagents] = useState<Tagents[]>([]);
-
+const Tabs = ({ agents, roles }: TabsProps): JSX.Element => {
   const [tabIndex, setTabIndex] = useState(0);
-
   const handleTabsChange = (index: number) => {
     setTabIndex(index);
   };
@@ -56,14 +49,6 @@ const Tabs = (): JSX.Element => {
   };
   useEffect(() => {
     handleWindowWidth();
-    window.addEventListener("resize", handleWindowWidth);
-    const getagents = async () => {
-      const { data: res } = await axios.get(
-        "https://pp-api-desafio.herokuapp.com/agents"
-      );
-      setagents(res.items);
-    };
-    getagents();
   }, []);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -147,7 +132,7 @@ const Tabs = (): JSX.Element => {
               <CollaboratorsList agents={agents} />
             </TabPanel>
             <TabPanel p={0}>
-              <PositionsList />
+              <PositionsList roles={roles} />
             </TabPanel>
           </TabPanels>
         </Ctabs>

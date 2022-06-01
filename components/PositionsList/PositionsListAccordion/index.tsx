@@ -1,11 +1,8 @@
 import fileIcon from "../../../public/images/file-plus.svg";
 import eyeIcon from "../../../public/images/eye-icon.svg";
-// import trashIcon from "../../../public/images/trash-icon.png";
-
 import duplicateIcon from "../../../public/images/duplicate-icon.svg";
 import deleteIcon from "../../../public/images/delete-icon.svg";
 import editIcon from "../../../public/images/edit-icon.svg";
-// import refreshIcon from "../../public/images/refresh-icon.svg";
 
 import {
   Accordion,
@@ -25,7 +22,6 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  Input,
   Button,
 } from "@chakra-ui/react";
 
@@ -33,12 +29,12 @@ import Image from "next/image";
 
 import * as S from "./styles";
 
-import type { Troles } from "..";
+import type { Trole } from "pages/index";
 import { useRef } from "react";
 import Link from "next/link";
 
 type PostListAccordionProps = {
-  roles: Troles[];
+  roles: Trole[];
 };
 const PostListAccordion = ({ roles }: PostListAccordionProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();

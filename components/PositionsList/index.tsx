@@ -1,8 +1,7 @@
-import axios from "axios";
 import React, { useState, useEffect, ReactNode } from "react";
-import { paginate } from "../../utils/paginate";
+import { paginate } from "utils/paginate";
 
-import refreshIcon from "../../public/images/refresh-icon.svg";
+import refreshIcon from "public/images/refresh-icon.svg";
 
 import Image from "next/image";
 
@@ -13,15 +12,12 @@ import Pagination from "../Pagination";
 import * as S from "./styles";
 
 import { Text } from "@chakra-ui/react";
+import type { Trole } from "pages/index";
 
-export type Troles = {
-  name: number;
-  departament: string;
-  agents_quantity: number;
+type PositionsListProps = {
+  roles: Trole[];
 };
-
-const CollaboratorsList = () => {
-  const [agents, setagents] = useState<Troles[]>([]);
+const PositionsList = ({ roles }: PositionsListProps) => {
   const [pageSize, setPageSize] = useState<number>(6);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
@@ -31,14 +27,6 @@ const CollaboratorsList = () => {
   };
 
   useEffect(() => {
-    const getagents = async () => {
-      const { data: res } = await axios.get(
-        "https://pp-api-desafio.herokuapp.com/roles"
-      );
-      console.log(res.roles);
-      setagents(res.roles);
-    };
-    getagents();
     handleWindowWidth();
     window.addEventListener("resize", handleWindowWidth);
   }, []);
@@ -53,7 +41,7 @@ const CollaboratorsList = () => {
     setPageSize(parseInt(event.target.value));
   };
 
-  const paginateRoles: Troles[] = paginate(agents, currentPage, pageSize);
+  const paginateRoles: Trole[] = paginate(roles, currentPage, pageSize);
 
   return (
     <>
@@ -74,7 +62,7 @@ const CollaboratorsList = () => {
             <>
               <PositionsListTable roles={paginateRoles} />
               <Pagination
-                items={agents.length}
+                items={roles.length}
                 pageSize={pageSize}
                 currentPage={currentPage}
                 onPageChange={handlePageChange}
@@ -87,9 +75,8 @@ const CollaboratorsList = () => {
               <S.LoadMoreButton
                 onClick={() => {
                   setPageSize(pageSize + 10);
-                  console.log(pageSize, agents.length);
                 }}
-                disabled={pageSize >= agents.length ? true : false}
+                disabled={pageSize >= roles.length ? true : false}
               >
                 <Image
                   src={refreshIcon}
@@ -109,4 +96,4 @@ const CollaboratorsList = () => {
   );
 };
 
-export default CollaboratorsList;
+export default PositionsList;
