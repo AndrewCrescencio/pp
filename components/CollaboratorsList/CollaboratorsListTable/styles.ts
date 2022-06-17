@@ -24,13 +24,13 @@ export const Th = styled.th`
     border-radius: 8px 0 0 0;
     padding-left: 16px;
   }
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     width: 156.5px;
   }
-  &:nth-child(3) {
+  &:nth-of-type(3) {
     width: 128.5px;
   }
-  &:nth-child(4) {
+  &:nth-of-type(4) {
     width: 174.5px;
   }
   &:last-of-type {

@@ -11,7 +11,7 @@ export const AccordionHeader = styled.div`
     line-height: 140%;
     color: #587169;
   }
-  p:nth-child(2) {
+  p:nth-of-type(2) {
     font-weight: 400;
     font-size: 12px;
     line-height: 140%;
@@ -45,15 +45,15 @@ export const AccordionContentItem = styled.div`
     margin-bottom: 2px;
     font-size: 12px;
   }
-  p:nth-child(2) {
+  p:nth-of-type(2) {
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
     color: #587169;
     font-size: 12px;
   }
-  &:nth-child(3) {
-    p:nth-child(2) {
+  &:nth-of-type(3) {
+    p:nth-of-type(2) {
       font-size: 14px;
     }
   }

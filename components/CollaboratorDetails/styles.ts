@@ -100,13 +100,13 @@ export const OrganizationalInfoDetailsItem = styled.div`
     font-size: 14px;
     color: #a3b8b0;
   }
-  &:nth-child(2)::before {
+  &:nth-of-type(2)::before {
     content: "Cargo";
   }
-  &:nth-child(3)::before {
+  &:nth-of-type(3)::before {
     content: "Unidade";
   }
-  &:nth-child(4)::before {
+  &:nth-of-type(4)::before {
     content: "Status";
   }
 `;

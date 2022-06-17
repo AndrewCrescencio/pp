@@ -56,7 +56,7 @@ export const InfoHeaderItem = styled.div`
     font-size: 14px;
     color: #a3b8b0;
   }
-  &:nth-child(2)::before {
+  &:nth-of-type(2)::before {
     content: "Cargo";
   }
 `;
@@ -90,13 +90,13 @@ export const Th = styled.th`
       padding-left: 8px;
     }
   }
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     width: 123px;
   }
-  &:nth-child(3) {
+  &:nth-of-type(3) {
     width: 123px;
   }
-  &:nth-child(4) {
+  &:nth-of-type(4) {
     width: 96px;
   }
   &:last-of-type {

@@ -3,6 +3,7 @@ import { GetStaticProps } from "next";
 import { ReactElement, useState } from "react";
 import Layout from "../components/Layout";
 import Tabs from "../components/Tabs";
+import { Heading } from "@chakra-ui/react";
 
 import * as S from "../styles/styles";
 
@@ -42,6 +43,12 @@ const Home = ({ agents, roles }: HomeProps) => {
 
   return (
     <S.Container>
+      <Heading
+        fontSize={32}
+        color="#34423d"
+        mb={6}
+        ml={["10px", null, "0"]}
+      ></Heading>
       <Tabs agents={agents} roles={roles} />
     </S.Container>
   );

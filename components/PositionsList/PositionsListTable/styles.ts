@@ -26,7 +26,7 @@ export const Th = styled.th`
     padding-left: 16px;
     box-sizing: border-box;
   }
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     width: 224px;
   }
   &:last-of-type {

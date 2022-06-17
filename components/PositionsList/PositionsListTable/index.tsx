@@ -16,10 +16,10 @@ import { Box, Text } from "@chakra-ui/react";
 
 import { Menu, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react";
 
-import type { Troles } from "..";
+import type { Trole } from "pages/index";
 
 type PositionsListTableProps = {
-  roles: Troles[];
+  roles: Trole[];
 };
 
 const PositionsListTable = ({ roles }: PositionsListTableProps) => {
